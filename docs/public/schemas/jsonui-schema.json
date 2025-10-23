@@ -1,0 +1,314 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "parentNode": {
+                "type": "string"
+            },
+            "name": {
+                "type": "string"
+            },
+            "type": {
+                "type": "string",
+                "enum": [
+                    "image",
+                    "imageTop",
+                    "imageElongate",
+                    "button",
+                    "buttonSlice",
+                    "scroll",
+                    "text",
+                    "textLeft",
+                    "textRight",
+                    "stackPanel"
+                ]
+            },
+            "textures": {
+                "type": "string"
+            },
+            "textureUrl": {
+                "type": "string",
+                "format": "uri"
+            },
+            "size": {
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        { "type": "string" },
+                        { "type": "number" }
+                    ]
+                },
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "maxSize": {
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        { "type": "string" },
+                        { "type": "number" }
+                    ]
+                },
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "minSize": {
+                "type": "array",
+                "items": {
+                    "anyOf": [
+                        { "type": "string" },
+                        { "type": "number" }
+                    ]
+                },
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "position": {
+                "type": "array",
+                "items": { "type": "number" },
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "anchorFrom": {
+                "type": "string",
+                "enum": [
+                    "top_left",
+                    "top_middle",
+                    "top_right",
+                    "left_middle",
+                    "center",
+                    "right_middle",
+                    "bottom_left",
+                    "bottom_middle",
+                    "bottom_right"
+                ]
+            },
+            "anchorTo": {
+                "type": "string",
+                "enum": [
+                    "top_left",
+                    "top_middle",
+                    "top_right",
+                    "left_middle",
+                    "center",
+                    "right_middle",
+                    "bottom_left",
+                    "bottom_middle",
+                    "bottom_right"
+                ]
+            },
+            "orientation": {
+                "type": "string",
+                "enum": [
+                    "h",
+                    "v"
+                ]
+            },
+            "default": {
+                "type": "string"
+            },
+            "hover": {
+                "type": "string"
+            },
+            "pressed": {
+                "type": "string"
+            },
+            "layer": {
+                "type": "number"
+            },
+            "contentSize": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            },
+            "clip": {
+                "type": "boolean"
+            },
+            "text": {
+                "type": "string"
+            },
+            "fontSize": {
+                "type": "number"
+            },
+            "textShadow": {
+                "type": "boolean"
+            },
+            "textLinePadding": {
+                "type": "number"
+            },
+            "alpha": {
+                "type": "number"
+            },
+            "visible": {
+                "type": "boolean"
+            },
+            "clipOffset": {
+                "type": "array",
+                "items": {
+                    "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "color": {
+                "type": "array",
+                "items": {
+                    "type": "number"
+                },
+                "minItems": 3,
+                "maxItems": 3
+            },
+            "uv": {
+                "type": "array",
+                "items": {
+                    "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "uvSize": {
+                "type": "array",
+                "items": {
+                    "type": "number"
+                },
+                "minItems": 2,
+                "maxItems": 2
+            },
+            "sequence": {
+                "type": "object",
+                "properties": {
+                    "uvSize": {
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                    },
+                    "uvLength": {
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                    },
+                    "interval": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                    },
+                    "loop": {
+                        "type": "boolean",
+                        "default": true
+                    }
+                }
+            },
+            "animations": {
+                "type": "array",
+                "items": {
+                    "oneOf": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "enum": [
+                                        "position",
+                                        "size"
+                                    ]
+                                },
+                                "axis": {
+                                    "type": "string",
+                                    "enum": ["x", "y"]
+                                },
+                                "relative": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "duration": {
+                                    "type": "number"
+                                },
+                                "delay": {
+                                    "type": "number"
+                                },
+                                "loop": {
+                                    "type": "boolean"
+                                },
+                                "value_start": {
+                                    "type": "number"
+                                },
+                                "value_end": {
+                                    "type": "number"
+                                },
+                                "curve": {
+                                    "type": "string",
+                                    "enum": ["LINEAR", "EASE_IN_OUT_SIN", "SIN_GO_AND_BACK", "EASE_IN", "EASE_OUT", "STEP"],
+                                    "default": "LINEAR"
+                                }
+                            },
+                            "required": ["type", "duration", "axis", "relative", "value_start", "value_end"]
+                        },
+                        {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "const": "size"
+                                },
+                                "duration": {
+                                    "type": "number"
+                                },
+                                "delay": {
+                                    "type": "number"
+                                },
+                                "loop": {
+                                    "type": "boolean"
+                                },
+                                "value_start": {
+                                    "type": "number"
+                                },
+                                "value_end": {
+                                    "type": "number"
+                                },
+                                "curve": {
+                                    "type": "string",
+                                    "enum": ["LINEAR", "EASE_IN_OUT_SIN", "SIN_GO_AND_BACK", "EASE_IN", "EASE_OUT", "STEP"],
+                                    "default": "LINEAR"
+                                }
+                            },
+                            "required": ["type", "duration", "value_start", "value_end"]
+                        },
+                        {
+                            "properties": {
+                                "type": {
+                                    "const": "alpha"
+                                },
+                                "from": {
+                                    "type": "number"
+                                },
+                                "to": {
+                                    "type": "number"
+                                },
+                                "duration": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "exclusiveMinimum": true
+                                },
+                                "loop": {
+                                    "type": "boolean",
+                                    "default": true
+                                }
+                            },
+                            "required": ["type", "from", "to", "duration"]
+                        }
+                    ],
+                    "required": ["type"]
+                }
+            }
+        },
+        "required": ["parentNode", "name", "type", "position", "size"],
+        "additionalProperties": true
+    }
+}
