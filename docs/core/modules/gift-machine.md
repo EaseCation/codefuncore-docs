@@ -105,13 +105,13 @@ gift-machine:
 
 ## 答题系统集成
 
-直接复用 **[Questions答题系统](Questions答题（题库）.md)**，支持：
+直接复用 **[Questions答题系统](./questions.md)**，支持：
 - 题库配置和管理
 - 答题会话和超时处理
 - 多选题UI界面
 - 答题结果回调处理
 
-多语言支持通过 **[多语言系统](多语言系统详解.md)** 实现。
+多语言支持通过 **[多语言系统](../systems/i18n.md)** 实现。
 
 ## Exchange系统集成
 
@@ -130,8 +130,8 @@ Exchange系统负责：
 
 礼物机框架依赖两个独立的配置文件：
 
-- **Exchange配置**：参考 **[Exchange兑换文档](Exchange兑换.md)** 编写奖励配置
-- **Questions配置**：参考 **[Questions答题文档](Questions答题（题库）.md)** 编写题库配置
+- **Exchange配置**：参考 **[Exchange兑换文档](./exchange.md)** 编写奖励配置
+- **Questions配置**：参考 **[Questions答题文档](./questions.md)** 编写题库配置
 
 框架会根据主配置文件中的`files`部分自动加载这些依赖配置。
 
@@ -177,7 +177,7 @@ GiftMachineEntity entity = activity.createGiftMachine("machine_1", position);
 
 ## 相关文档
 
-- **[SimpleStateMachine状态机](SimpleStateMachine状态机.md)** - 状态机框架详解
-- **[Exchange兑换](Exchange兑换.md)** - 奖励系统配置
-- **[Questions答题（题库）](Questions答题（题库）.md)** - 答题系统使用
-- **[多语言系统](多语言系统详解.md)** - 国际化支持
+- **[SimpleStateMachine状态机](./state-machine.md)** - 状态机框架详解
+- **[Exchange兑换](./exchange.md)** - 奖励系统配置
+- **[Questions答题（题库）](./questions.md)** - 答题系统使用
+- **[多语言系统](../systems/i18n.md)** - 国际化支持

@@ -67,13 +67,13 @@ public class CodeFunCoreTool {
 ## 核心系统组件
 
 ### 1. Stage系统
-游戏房间管理的核心系统，详见 [Stage系统详解](Stage系统详解.md)
+游戏房间管理的核心系统，详见 [Stage系统详解](./stage.md)
 
 ### 2. ECPlayer系统
-扩展的玩家系统，详见 [ECPlayer系统详解](ECPlayer系统详解.md)
+扩展的玩家系统，详见 [ECPlayer系统详解](./ecplayer.md)
 
 ### 3. 语言系统
-多语言支持的核心组件，详见 [多语言系统详解](多语言系统详解.md)
+多语言支持的核心组件，详见 [多语言系统详解](../systems/i18n.md)
 
 ### 4. 数据持久化系统
 数据库和缓存系统的集成，支持MySQL、Redis等多种存储方式以及飞书机器人集成
