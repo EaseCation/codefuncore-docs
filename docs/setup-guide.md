@@ -69,7 +69,7 @@ npm install
 npm run docs:dev
 ```
 
-访问 http://localhost:5173/codefuncore-docs/
+访问 `http://localhost:5173/codefuncore-docs/`
 
 ### 构建测试
 
