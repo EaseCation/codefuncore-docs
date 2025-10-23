@@ -160,7 +160,10 @@ export default defineConfig({
   },
 
   // 配置 base 路径用于 GitHub Pages
-  base: '',
+  base: '/',
+
+  // 启用 cleanUrls 以支持伪静态路由
+  cleanUrls: true,
 
   // Markdown 配置
   markdown: {
